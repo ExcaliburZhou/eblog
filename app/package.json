@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "ExcaliburZhou <1293556249@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}

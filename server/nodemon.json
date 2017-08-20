@@ -1,0 +1,18 @@
+{
+  "verbose": false,
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "execMap": {
+    "js": "babel-node --inspect"
+  },
+  "watch": [
+    "src/"
+  ],
+  "ignore": [
+    ".git",
+    ".idea",
+    "node_modules"
+  ],
+  "ext": "js"
+}

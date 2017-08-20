@@ -1,0 +1,25 @@
+{
+  "name": "eblog",
+  "version": "0.1.0",
+  "description": "self blog ",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd ./server && yarn test",
+    "lint": "cd ./server && yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExcaliburZhou/eblog.git"
+  },
+  "keywords": [
+    "blog",
+    "javascript",
+    "node"
+  ],
+  "author": "ExcaliburZhou <1293556249@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ExcaliburZhou/eblog/issues"
+  },
+  "homepage": "https://github.com/ExcaliburZhou/eblog#readme"
+}
