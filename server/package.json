@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "lint": "eslint src/index.js",
-    "test": "istanbul cover --print both _mocha -- test/index.js",
-    "precommit": "yarn lint && yarn test"
+    "start": "NODE_ENV=development nodemon src/index.js",
+    "lint": "eslint src/**/*.js",
+    "test": "istanbul cover --print both _mocha -- test/index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -21,7 +22,6 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.2.1",
-    "husky": "^0.14.3",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "^3.5.0",
     "nodemon": "^1.11.0"
