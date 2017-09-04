@@ -20,9 +20,11 @@ module.exports = merge(webpackConfig, {
       children: false,
       assets: false,
     },
-    // quiet: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    // This plugin will cause the relative path of the module to be displayed
+    // when HMR is enabled. Suggested for use in development.
+    new webpack.NamedModulesPlugin(),
   ]
 });

@@ -9,5 +9,5 @@ module.exports = {
   dist: resolvePath('dist'),
   public: resolvePath('public'),
   templateHTML: resolvePath('public/index.html'),
-
+  static: resolvePath('dist/static'),
 };

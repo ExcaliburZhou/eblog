@@ -4,18 +4,21 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const cssFileName = '[name].[contenthash:8].css';
 
 module.exports = {
-  entry: paths.index,
+  entry: {
+    index: paths.index,
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash:8].js',
     path: paths.dist,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: paths.templateHTML,
     }),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin({ filename: cssFileName }),
     new StyleLintPlugin({
       syntax: 'scss',
       config: {

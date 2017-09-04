@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss';
+import Demo from './container/Demo';
+import './index.scss';
 
 ReactDOM.render(
-  <div>
-    heheda
-  </div>,
+  <Demo />,
   document.getElementById('app')
 );
