@@ -20,7 +20,8 @@ module.exports = {
     }),
     new ExtractTextPlugin({ filename: cssFileName }),
     new StyleLintPlugin({
-      syntax: 'scss',
+      syntax: 'less',
+      files: '**/*.less',
       config: {
         extends: 'stylelint-config-standard',
       },
@@ -30,7 +31,7 @@ module.exports = {
     strictExportPresence: true,
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         enforce: 'pre',
         use: [
           {
