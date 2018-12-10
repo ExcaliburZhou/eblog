@@ -1,6 +1,6 @@
 import { ADD_NUMBER } from './actionTypes';
 
-export const add = () => ({
+export const add = data => ({
   type: ADD_NUMBER,
-  data: 2,
+  data,
 });

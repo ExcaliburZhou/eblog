@@ -19,6 +19,50 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@types/history@*":
+  version "4.7.2"
+  resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
+
+"@types/prop-types@*":
+  version "15.5.6"
+  resolved "http://registry.npm.taobao.org/@types/prop-types/download/@types/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
+
+"@types/react-dom@^16.0.11":
+  version "16.0.11"
+  resolved "http://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-16.0.11.tgz#bd10ccb0d9260343f4b9a49d4f7a8330a5c1f081"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-redux@^6.0.10":
+  version "6.0.10"
+  resolved "http://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-6.0.10.tgz#80a3003a7d50112c65692a8b41752f623217a17c"
+  dependencies:
+    "@types/react" "*"
+    redux "^4.0.0"
+
+"@types/react-router-redux@^5.0.16":
+  version "5.0.16"
+  resolved "http://registry.npm.taobao.org/@types/react-router-redux/download/@types/react-router-redux-5.0.16.tgz#3db2a8f0410fe9d821e6ace87b774c8bdecb39ca"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+    redux ">= 3.7.2"
+
+"@types/react-router@*", "@types/react-router@^4.4.1":
+  version "4.4.1"
+  resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.4.1.tgz#c875dfd0b6fe00efa463eb8e5de8b5f74644b3f5"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react@*", "@types/react@^16.7.13":
+  version "16.7.13"
+  resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.7.13.tgz#d2369ae78377356d42fb54275d30218e84f2247a"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 abbrev@1:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/abbrev/download/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -1834,6 +1878,10 @@ csso@~2.3.1:
   dependencies:
     clap "^1.0.9"
     source-map "^0.5.3"
+
+csstype@^2.2.0:
+  version "2.5.8"
+  resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.5.8.tgz#4ce5aa16ea0d562ef9105fa3ae2676f199586a35"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -5396,7 +5444,7 @@ redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
 
-redux@^4.0.1:
+"redux@>= 3.7.2", redux@^4.0.0, redux@^4.0.1:
   version "4.0.1"
   resolved "http://registry.npm.taobao.org/redux/download/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
   dependencies:
@@ -6229,6 +6277,10 @@ type-is@~1.6.15:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^3.2.1:
+  version "3.2.1"
+  resolved "http://registry.npm.taobao.org/typescript/download/typescript-3.2.1.tgz#0b7a04b8cf3868188de914d9568bd030f0c56192"
 
 ua-parser-js@^0.7.18:
   version "0.7.19"

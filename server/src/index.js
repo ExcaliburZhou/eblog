@@ -1,7 +1,12 @@
-import dotenv from 'dotenv';
+import Koa from 'koa';
 
-dotenv.config();
-export const add = (a, b) => a + b;
-export const minus = (a, b, c) => a - b - c;
+const app = new Koa();
 
-console.log(process.env.DB_HOST);
+app.use(async (ctx) => {
+  ctx.body = 'hello world';
+  ctx.keys = ['i am wx', 'heheda'];
+  console.log(new Date);
+  console.log(ctx.ip);
+});
+
+app.listen(3008);
