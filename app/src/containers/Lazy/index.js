@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 class Lazy extends Component {
   componentWillUpdate() {
-    console.log('top2 will update');
+    console.log('lazy will update');
   }
 
   componentDidUpdate() {
-    console.log('top2 did update');
+    console.log('lazy2 did update');
   }
 
   render() {
-    console.log('top2 will render');
+    console.log('lazy render');
     return (
       <div>
-        13444
+        lazy
       </div>
     );
   }

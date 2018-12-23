@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 class Second extends Component {
   componentWillUpdate() {
-    console.log('top2 will update');
+    console.log('second1 will update');
   }
 
   componentDidUpdate() {
-    console.log('top2 did update');
+    console.log('second1 did update');
   }
 
   render() {
-    console.log('top2 will render');
+    console.log('second1 will render');
     return (
       <div>
-        13444
+        second1first1
       </div>
     );
   }

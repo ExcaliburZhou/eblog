@@ -1,7 +1,9 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Loadable from 'react-loadable';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import './index.less';
 import * as Actions from './actions';
 
@@ -10,7 +12,10 @@ const mapActionsToProps = dispatch => ({
   demoActions: bindActionCreators(Actions, dispatch)
 });
 
-const LazyComponent = lazy(() => import('../lazy'));
+const LazyComponent = Loadable({
+  loader: () => import('../lazy'),
+  loading: () => <div>loading</div>,
+});
 
 export class Demo extends Component {
   static contextTypes = {
@@ -18,13 +23,14 @@ export class Demo extends Component {
   };
 
   static propTypes = {
-    demo: PropTypes.object.isRequired,
+    // demo: PropTypes.object.isRequired,
     demoActions: PropTypes.object.isRequired,
   };
 
   static getDerivedStateFromProps(props, state) {
-    console.log('derived', state);
-    return props.demo;
+    console.log('second2 derived', state);
+    console.log(props.demo);
+    return null;
   }
 
   state = {
@@ -32,11 +38,14 @@ export class Demo extends Component {
   };
 
   componentDidMount() {
-    console.log('didmount', this.state);
+    console.log('second2 didMount', this.state);
+    setTimeout(() => {
+      this.setState(state => ({ a: state.a + 5 }));
+    }, 5000);
   }
 
   componentDidUpdate() {
-    console.log('didupdate', this.state);
+    console.log('second2 didUpdate', this.state);
   }
 
   add = () => {
@@ -49,11 +58,16 @@ export class Demo extends Component {
     });
   };
 
+  createError = () => {
+    this.setState({
+      error: true
+    });
+  };
+
   render() {
-    const str = '<script>alert(1);</script>';
     return (
       <div>
-        <div className="box">{this.props.demo.a}</div>
+        <div className="box">{this.state.a}</div>
         <div>
           <button
             onClick={this.add}
@@ -61,13 +75,18 @@ export class Demo extends Component {
           <button
             onClick={this.importLazy}
           >点击加载lazy</button>
-          <div>{str}</div>
+          <button
+            onClick={this.createError}
+          >点击触发Error错误</button>
           {
             this.state.lazy &&
-            <Suspense fallback={<div>loading</div>}>
-              <LazyComponent />
-            </Suspense>
+            <LazyComponent />
           }
+          <ErrorBoundary>
+            <div>
+              {this.state.error ? this.state : this.state.a}
+            </div>
+          </ErrorBoundary>
         </div>
       </div>
     );
