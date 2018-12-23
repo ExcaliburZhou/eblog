@@ -24,6 +24,24 @@
   },
   "homepage": "https://github.com/ExcaliburZhou/eblog#readme",
   "devDependencies": {
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "build",
+        "ci",
+        "chore",
+        "revert"
+      ]
+    }
   }
 }

@@ -19,7 +19,7 @@
     },
     "settings": {
       "import/resolver": {
-        "webpack": {"config": "webpack/base.js"}
+        "webpack": {"config": "webpack/webpack.common.js"}
       }
     },
     "env": {

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { add } from '../src';
+import add from '../src/utils';
 
 describe('test', () => {
   describe('eh', () => {
