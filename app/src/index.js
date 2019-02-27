@@ -1,25 +1,91 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
-import store from './store';
-import routes from './routes';
-import history from './history';
+import React from './react';
+import PropTypes from 'prop-types';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
-        {
-          routes.map(r => <Route key={r.path} {...r} />)
-        }
-      </Switch>
-    </ConnectedRouter>
-  </Provider>,
+const Item = ({ name, url }) => (<a href={url}>{name}</a>);
+Item.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+
+class Story extends React.Component {
+  state = {
+    like: Math.ceil(Math.random() * 100)
+  };
+
+  like = () => {
+    this.setState({
+      like: this.state.like + 1
+    });
+  };
+
+  shouldComponentUpdate() {
+    console.log('story exec shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log('story will update');
+  }
+
+  componentDidUpdate() {
+    console.log('story did update');
+  }
+
+  render() {
+    const { name, url } = this.props;
+    const { like } = this.state;
+    return (
+      <li>
+        <button onClick={this.like}>{like}<b>❤️</b></button>
+        <Item name={name} url={url} />
+      </li>
+    )
+  }
+}
+
+class App extends React.Component {
+  componentWillMount() {
+    console.log('did mount');
+  }
+
+  componentDidMount() {
+    console.log('did mount');
+  }
+
+  componentWillUnmount() {
+    console.log('will unmount');
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>title</h1>
+        <ul>
+          {
+            this.props.stories.map(story =>
+              <Story {...story} />
+            )
+          }
+        </ul>
+      </div>
+    )
+  }
+}
+
+
+const stories = [
+  {
+    name: 'hehe',
+    url: 'heihei',
+  },
+  {
+    name: 'zhihu',
+    url: 'https://www.zhihu.com'
+  }
+];
+React.render(
+  <App
+    stories={stories}
+  />,
   document.getElementById('app')
 );
-
-if (module.hot) {
-  module.hot.accept();
-}

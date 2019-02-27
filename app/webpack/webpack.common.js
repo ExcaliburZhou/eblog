@@ -30,15 +30,15 @@ module.exports = {
   module: {
     strictExportPresence: true,
     rules: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'eslint-loader',
-          },
-        ],
-      },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       loader: 'eslint-loader',
+      //     },
+      //   ],
+      // },
       {
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
